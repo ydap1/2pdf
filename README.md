@@ -7,7 +7,7 @@ Simple bash script that allows you to easily convert a file into a PDF format us
 
 ## Features
 
-- Converts files from all [formats](https://pandoc.org/MANUAL.html#general-options) supported by pandoc to PDF.
+- Converts files from all [formats](https://pandoc.org/MANUAL.html#general-options) supported by pandoc to PDF to be viewed in zathura.
 - Uses `pandoc` for document conversion and `zathura` for viewing the output PDF.
 
 ## Installation
