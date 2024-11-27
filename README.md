@@ -19,8 +19,8 @@ Make sure you have the following installed on your system:
 - **pandoc**  
 - **zathura**  
 - **zathura-pdf-mupdf**
-- **[texlive]**(https://www.tug.org/texlive/quickinstall.html)
-- (optional) **[shc]**(https://github.com/neurobin/shc) 
+- [texlive](https://www.tug.org/texlive/quickinstall.html)
+- (optional) [shc](https://github.com/neurobin/shc) 
 
 ### Installing the Script
 
