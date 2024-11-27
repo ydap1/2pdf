@@ -1,7 +1,7 @@
 
 ---
 
-# 2pdf Bash Script
+# 2pdf 
 
 Simple bash script that allows you to easily convert a file into a PDF format using `pandoc` and view it with `zathura`.
 
@@ -16,9 +16,10 @@ Simple bash script that allows you to easily convert a file into a PDF format us
 
 Make sure you have the following installed on your system:
 
-- **pandoc** - 
-- **zathura** - 
-- **TeX Live** - [texlive](https://www.tug.org/texlive/quickinstall.html).
+- **pandoc**  
+- **zathura**  
+- **zathura-pdf-mupdf**
+- **TeX Live** [texlive](https://www.tug.org/texlive/quickinstall.html).
 - **shc** - [shc](https://github.com/neurobin/shc).
 
 ### Installing the Script
@@ -26,7 +27,7 @@ Make sure you have the following installed on your system:
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/yourusername/2pdf.git
+   git clone https://github.com/ydap1/2pdf.git
    cd 2pdf
    ```
 
@@ -50,7 +51,7 @@ If you prefer to compile the Bash script into a standalone binary, use the provi
 
 ### Usage of `compile_to_binary.sh`
 
-1. Ensure you have `shc` installed on your system (as mentioned above).
+1. Ensure you have `shc` installed on your system. 
 2. Run the following command to compile the script into a binary:
 
    ```bash
