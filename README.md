@@ -37,10 +37,10 @@ Make sure you have the following installed on your system:
    chmod +x 2pdf.sh
    ```
 
-3. Move the script to `/usr/local/bin` to make it globally accessible:
+3. Copy the script to `/usr/local/bin` to make it globally accessible:
 
    ```bash
-   sudo mv 2pdf.sh /usr/local/bin/2pdf
+   sudo cp 2pdf.sh /usr/local/bin/2pdf
    ```
 
 Now you can run the script by simply typing `2pdf <file>` in your terminal.
