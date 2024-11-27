@@ -20,7 +20,7 @@ Make sure you have the following installed on your system:
 - **zathura**  
 - **zathura-pdf-mupdf**
 - **TeX Live** [texlive](https://www.tug.org/texlive/quickinstall.html).
-- **shc** - [shc](https://github.com/neurobin/shc).
+- (optional) **shc** - [shc](https://github.com/neurobin/shc). 
 
 ### Installing the Script
 
