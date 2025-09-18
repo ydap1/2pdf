@@ -44,31 +44,3 @@ Make sure you have the following installed on your system:
    ```
 
 Now you can run the script by simply typing `2pdf <file>` in your terminal.
-
-## Compile the Script to a Binary
-
-If you prefer to compile the Bash script into a standalone binary, use the provided `compile_to_binary.sh` script.
-
-### Usage of `compile_to_binary.sh`
-
-1. Ensure you have `shc` installed on your system. 
-2. Run the following command to compile the script into a binary:
-
-   ```bash
-   chmod +x compile_to_binary
-   ./compile_to_binary.sh
-   ```
-### Example
-
-To convert a Markdown file (`example.md`) to a PDF and view it with `zathura` 
-
-```bash
-2pdf example.md
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
