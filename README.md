@@ -1,46 +1,92 @@
+# 2pdf
 
----
-
-# 2pdf 
-
-Simple bash script that allows you to easily convert a file into a PDF format using `pandoc` and view it with `zathura`.
+Simple bash script to convert files to PDF using `pandoc` and view them with `zathura`.
 
 ## Features
 
-- Converts files from all [formats](https://pandoc.org/MANUAL.html#general-options) supported by pandoc to PDF to be viewed in zathura.
-- Uses `pandoc` for document conversion and `zathura` for viewing the output PDF.
+- Converts files from all [formats supported by pandoc](https://pandoc.org/MANUAL.html#general-options) to PDF.
+- Interactively picks a pandoc format when a file extension maps to several (e.g. `.md`, `.txt`).
+- Opens the result directly in `zathura`, or saves it to a file with `-o`.
 
 ## Installation
 
 ### Prerequisites
 
-Make sure you have the following installed on your system:
+- [pandoc](https://pandoc.org/installing.html)
+- [zathura](https://pwmt.org/projects/zathura/) + [zathura-pdf-mupdf](https://pwmt.org/projects/zathura-pdf-mupdf/)
+- [TeX Live](https://www.tug.org/texlive/quickinstall.html) (required by pandoc for PDF output)
 
-- **pandoc**  
-- **zathura**  
-- **zathura-pdf-mupdf**
-- [texlive](https://www.tug.org/texlive/quickinstall.html)
-- (optional) [shc](https://github.com/neurobin/shc) 
+### Setup
 
-### Installing the Script
+```bash
+git clone https://github.com/ydap1/2pdf.git
+cd 2pdf
+chmod +x 2pdf.sh
+sudo cp 2pdf.sh /usr/local/bin/2pdf
+```
 
-1. Clone the repo:
+## Usage
 
-   ```bash
-   git clone https://github.com/ydap1/2pdf.git
-   cd 2pdf
-   ```
+```
+2pdf [OPTIONS] <file>
 
-2. Make the script executable:
+Options:
+  -o, --output <file>  Save the PDF to a file instead of opening the viewer
+  -h, --help           Show help
+  -v, --version        Show version
+```
 
-   ```bash
-   chmod +x 2pdf.sh
-   ```
+### Examples
 
-3. Copy the script to `/usr/local/bin` to make it globally accessible:
+```bash
+# View a Markdown file
+2pdf notes.md
 
-   ```bash
-   sudo cp 2pdf.sh /usr/local/bin/2pdf
-   ```
+# View an HTML file
+2pdf report.html
 
-Now you can run the script by simply typing `2pdf <file>` in your terminal.
+# Save to PDF instead of opening zathura
+2pdf thesis.tex -o thesis.pdf
+
+# View a reStructuredText file
+2pdf docs.rst
+```
+
+## Supported Extensions
+
+| Extension | Pandoc formats |
+|-----------|---------------|
+| `md`, `markdown` | commonmark, commonmark_x, markdown, markdown_mmd, markdown_phpextra, markdown_strict |
+| `txt` | plain, dokuwiki, tikiwiki, twiki, jira, vimwiki |
+| `html`, `htm` | html |
+| `tex` | latex |
+| `rst` | rst |
+| `org` | org |
+| `docx` | docx |
+| `odt` | odt |
+| `epub` | epub |
+| `rtf` | rtf |
+| `csv` | csv |
+| `tsv` | tsv |
+| `json` | json |
+| `ipynb` | ipynb |
+| `xml` | bits |
+| `typ` | typst |
+| `fb2` | fb2 |
+| `man` | man |
+| `mw`, `wiki` | mediawiki |
+| `hs` | native |
+| `djot` | djot |
+| `opml` | opml |
+| `muse` | muse |
+| `ris` | ris |
+| `t2t` | t2t |
+| `textile` | textile |
+| `creole` | creole |
+| `csljson` | csljson |
+| `bibtex` | bibtex |
+| `biblatex` | biblatex |
+
+## License
+
+[MIT](LICENSE)
