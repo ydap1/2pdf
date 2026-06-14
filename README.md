@@ -14,7 +14,17 @@ Simple bash script to convert files to PDF using `pandoc` and view them with `za
 
 - [pandoc](https://pandoc.org/installing.html)
 - [zathura](https://pwmt.org/projects/zathura/) + [zathura-pdf-mupdf](https://pwmt.org/projects/zathura-pdf-mupdf/)
-- [TeX Live](https://www.tug.org/texlive/quickinstall.html) (required by pandoc for PDF output)
+- A PDF engine — at least one of:
+
+| Engine | How to install | Notes |
+|--------|---------------|-------|
+| `pdflatex` / `xelatex` / `lualatex` | [TeX Live](https://www.tug.org/texlive/quickinstall.html) (~3 GB) | Default; best quality, supports math & citations |
+| `wkhtmltopdf` | [wkhtmltopdf.org](https://wkhtmltopdf.org/downloads.html) | Lightweight; HTML-based rendering |
+| `weasyprint` | `pip install weasyprint` | Lightweight; Python-based |
+| `pagedjs-cli` | `npm install -g pagedjs-cli` | Lightweight; Node.js-based |
+| `tectonic` | [tectonic-typesetting.io](https://tectonic-typesetting.io) | Self-contained LaTeX, downloads packages on demand |
+
+The script checks for a PDF engine at startup and tells you what to install if none is found.
 
 ### Setup
 

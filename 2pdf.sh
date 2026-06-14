@@ -83,6 +83,25 @@ for cmd in "${deps[@]}"; do
     fi
 done
 
+# Require at least one PDF engine
+pdf_engines=(pdflatex xelatex lualatex wkhtmltopdf weasyprint pagedjs-cli tectonic)
+found_engine=0
+for engine in "${pdf_engines[@]}"; do
+    if command -v "$engine" &>/dev/null; then
+        found_engine=1
+        break
+    fi
+done
+if [[ $found_engine -eq 0 ]]; then
+    echo "Error: No PDF engine found. Install one of:" >&2
+    echo "  pdflatex / xelatex / lualatex  — via TeX Live (full quality)" >&2
+    echo "  wkhtmltopdf                    — lightweight, HTML-based" >&2
+    echo "  weasyprint                     — lightweight, Python-based" >&2
+    echo "  pagedjs-cli                    — lightweight, Node.js-based" >&2
+    echo "  tectonic                       — self-contained LaTeX engine" >&2
+    exit 1
+fi
+
 if [[ ! -f "$input_file" ]]; then
     echo "Error: File '$input_file' not found." >&2
     exit 1
