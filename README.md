@@ -31,9 +31,10 @@ sudo cp 2pdf.sh /usr/local/bin/2pdf
 2pdf [OPTIONS] <file>
 
 Options:
-  -o, --output <file>  Save the PDF to a file instead of opening the viewer
-  -h, --help           Show help
-  -v, --version        Show version
+  -o, --output <file>   Save the PDF to a file instead of opening the viewer
+  -f, --format <fmt>    Pandoc input format (skips interactive selection)
+  -h, --help            Show help
+  -v, --version         Show version
 ```
 
 ### Examples
@@ -48,8 +49,11 @@ Options:
 # Save to PDF instead of opening zathura
 2pdf thesis.tex -o thesis.pdf
 
-# View a reStructuredText file
-2pdf docs.rst
+# Skip the format menu — useful in scripts or makefiles
+2pdf notes.md -f markdown
+
+# Works on headless systems (zathura not needed with -o)
+2pdf report.rst -o report.pdf
 ```
 
 ## Supported Extensions
@@ -75,6 +79,7 @@ Options:
 | `fb2` | fb2 |
 | `man` | man |
 | `mw`, `wiki` | mediawiki |
+| `adoc`, `asciidoc` | asciidoc |
 | `hs` | native |
 | `djot` | djot |
 | `opml` | opml |
